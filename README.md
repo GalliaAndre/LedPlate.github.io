@@ -1,2 +1,16 @@
 # LedPlate.github.io
-A simple crossplatform Flutter PWA for my bachelor's degree project.
+A simple flutter PWA for my bachelor's degree project.
+
+**First**: I coded the Flutter logic on Android Studio
+
+**Second**: Built flutter web and edited all the needed files following my template (https://github.com/GalliaAndre/test_pwa.github.io)
+
+**Third**: Published on GitHub Pages
+
+You can see it live on: https://galliaandre.github.io/LedPlate.github.io/#/
+
+As you can see in the browser bar appears the ***+Install*** button. This PWA works also on browser and on smartphones, online and offline.
+
+
+
+More infos soon
