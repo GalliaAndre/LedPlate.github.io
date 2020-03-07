@@ -1,5 +1,9 @@
 # LedPlate.github.io
-A simple flutter PWA for my bachelor's degree project.
+A simple flutter PWA for my bachelor's degree project. 
+
+See it live on https://galliaandre.github.io/LedPlate.github.io/
+
+
 
 **First**: I coded the Flutter logic on Android Studio
 
