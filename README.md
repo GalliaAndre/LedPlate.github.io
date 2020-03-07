@@ -3,8 +3,7 @@ A simple flutter PWA for my bachelor's degree project.
 
 **First**: I coded the Flutter logic on Android Studio
 
-**Second**: Built flutter web and edited all the needed files following my template (https://github.com/GalliaAndre/test_pwa.github.io)
-
+**Second**: Built flutter web and edited all the needed files following my template 
 **Third**: Published on GitHub Pages
 
 You can see it live on: https://galliaandre.github.io/LedPlate.github.io/#/
