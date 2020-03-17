@@ -1,23 +1,22 @@
 var CACHE_NAME = 'ledplate-pwa-cache';
 var FILES_TO_CACHE = [
-"index.html",
-"main.dart.js",
-"main.dart.js.map",
-"manifest.json",
-"assets/AssetManifest.json",
-"assets/FontManifest.json",
-"assets/fonts/MaterialIcons-Regular.ttf",
-"assets/packages/cupertino_icons/assets/CupertinoIcons.ttf",
+    "index.html",
+    "main.dart.js",
+    "main.dart.js.map",
+    "manifest.json",
+    "assets/AssetManifest.json",
+    "assets/FontManifest.json",
+    "assets/fonts/MaterialIcons-Regular.ttf",
+    "assets/packages/cupertino_icons/assets/CupertinoIcons.ttf",
 ];
 
 /* Start the service worker and cache all of the app's content */
 self.addEventListener('install', function(e) {
     console.log('[ServiceWorker] Install');
-  e.waitUntil(
-    caches.open(CACHE_NAME).then(function(cache) {
-      return cache.addAll(FILES_TO_CACHE);
-    })
-  );
+    e.waitUntil(
+        caches.open(CACHE_NAME).then(function(cache) {
+            return cache.addAll(FILES_TO_CACHE);
+        }));
 });
 
 self.addEventListener('activate', (e)=>{
