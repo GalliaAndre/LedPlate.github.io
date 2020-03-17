@@ -36,27 +36,28 @@ self.addEventListener('activate', (e)=>{
     self.clients.claim();
 });
 
-/* Serve cached content when offline or new (if there are) when online. STALE-WHILE-REVALIDATE */
-self.addEventListener('fetch', function(e) {
-  console.log('[ServiceWorker] Fetch', e.request.url);
 
-  e.respondWith(
-
-    /*caches.match(e.request).then(function(response) {
+ /*caches.match(e.request).then(function(response) {
       return response || fetch(e.request);
     })
   );
 });
 */
-      caches.open('CACHE_NAME').then(function(cache) {
-      return cache.match(e.request).then(
-          function(response) {
-              var fetchPromise = fetch(e.request).then(function(networkResponse) {
-                  cache.put(e.request, networkResponse.clone());
-                  return networkResponse;
-              })
-        return response || fetchPromise;
-      })
-    })
-  );
+
+/*STALE-WHILE-REVALIDATE */
+/* Serve cached content when offline or new (if there are) when online.*/
+self.addEventListener('fetch', function(e) {
+    console.log('[ServiceWorker] Fetch', e.request.url);
+    
+    e.respondWith(
+        caches.open('CACHE_NAME').then(function(cache) {
+            return cache.match(e.request).then(
+                function(response) {
+                    var fetchPromise = fetch(e.request).then(function(networkResponse) {
+                        cache.put(e.request, networkResponse.clone());
+                        return networkResponse;
+                    })
+                    return response || fetchPromise;
+                })
+        }));
 });
