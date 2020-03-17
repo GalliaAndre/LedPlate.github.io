@@ -20,19 +20,20 @@ self.addEventListener('install', function(e) {
 });
 
 self.addEventListener('activate', (e)=>{
-  console.log('[ServiceWorker] Activate');
+    console.log('[ServiceWorker] Activate');
+    
   //Remove previous cached data from disk.
-e.waitUntil(
-    caches.keys().then((keyList) => {
-      return Promise.all(keyList.map((key) => {
-        if (key !== CACHE_NAME) {
-          console.log('[ServiceWorker] Removing old cache', key);
-          return caches.delete(key);
-        }
-      }));
-    })
-);
-  self.clients.claim();
+    e.waitUntil(
+        caches.keys().then((keyList) => {
+            return Promise.all(keyList.map((key) => {
+                if (key !== CACHE_NAME) {
+                    console.log('[ServiceWorker] Removing old cache', key);
+                    return caches.delete(key);
+                }
+            }));
+        })
+    );
+    self.clients.claim();
 });
 
 /* Serve cached content when offline or new (if there are) when online. STALE-WHILE-REVALIDATE */
