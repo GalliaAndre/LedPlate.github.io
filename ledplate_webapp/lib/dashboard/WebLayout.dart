@@ -109,8 +109,7 @@ class WebLayoutState extends State<WebLayout> {
                                 );
 
                               if (kIsWeb) {
-                                InputElement uploadInput =
-                                    FileUploadInputElement();
+                                InputElement uploadInput = FileUploadInputElement();
                                 uploadInput.draggable = true;
                                 uploadInput.click();
 
